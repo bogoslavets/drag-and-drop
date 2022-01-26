@@ -1,24 +1,17 @@
 <template>
-  <section
-    aria-labelledby="album-heading"
-    class="mt-6 lg:mt-0 lg:col-span-2 xl:col-span-3"
-  >
-    <h2 id="album-heading" class="sr-only">Albums</h2>
-
-    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3 p-4">
-      <div v-for="album in albums" :key="album.id" class="col-span-1">
-        <AlbumCard
-          :album="album"
-          :photos="getAlbumItems2(album.id)"
-        ></AlbumCard>
-      </div>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3 p-4">
+    <div v-for="album in albums" :key="album.id" class="col-span-1">
+      <AlbumCard
+        :album="album"
+        :photos="getAlbumItems(album.id)"
+        @change-album="changeAlbum"
+      >
+      </AlbumCard>
     </div>
-  </section>
+  </div>
 </template>
-
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-//import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 import axios from "axios";
 import { Album, Photo } from "@/types/elements.types";
 @Component({
@@ -31,30 +24,40 @@ export default class Home extends Vue {
   public photos: Photo[] = [];
 
   mounted(): void {
-    console.log("hi");
     axios
       .get("https://jsonplaceholder.typicode.com/albums")
       .then((response) => (this.albums = response.data.slice(0, 3)));
-    console.log(this.albums);
+    let allPhotos: Photo[] = [];
     axios
       .get("https://jsonplaceholder.typicode.com/photos")
-      .then((response) => (this.photos = response.data));
-    console.log(this.photos);
+      .then(
+        (response) => (
+          (allPhotos = response.data),
+          this.photos.push(
+            allPhotos[0],
+            allPhotos[1],
+            allPhotos[2],
+            allPhotos[49],
+            allPhotos[50],
+            allPhotos[51],
+            allPhotos[99],
+            allPhotos[100],
+            allPhotos[101]
+          )
+        )
+      );
   }
 
-  getAlbumItems(albumId: number): Photo[] {
-    console.log(albumId);
+  /*getAlbumItems(albumId: number): Photo[] {
     if (this.albums.length > 0 && this.photos.length > 0) {
       const photos = this.photos.filter((photo) => {
         albumId == photo.albumId;
       });
-      console.log("photos");
-      console.log(photos);
       return photos;
     } else return [];
-  }
+  }*/
 
-  getAlbumItems2(albumId: number): Photo[] {
+  getAlbumItems(albumId: number): Photo[] {
     const result: Photo[] = [];
     if (this.albums.length > 0 && this.photos.length > 0) {
       this.photos.forEach((photo) => {
@@ -63,7 +66,22 @@ export default class Home extends Vue {
         }
       });
     }
-    return result.splice(0, 6);
+    return result;
+  }
+
+  async changeAlbum(photoId: number, albumId: number): Promise<void> {
+    this.photos.forEach((photo) => {
+      if (photo.id == photoId) {
+        photo.albumId = albumId;
+      }
+    });
+
+    /*
+    const target = this.photos.find((photo) => {
+      photo.id === photoId;
+    });
+    if (target) target.albumId = albumId;
+    */
   }
 }
 </script>
