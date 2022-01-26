@@ -54,7 +54,7 @@ export default class AlbumCard extends Vue {
   album: Album;
 
   @Prop({
-    default: [],
+    default: () => [],
   })
   photos: Photo[];
 

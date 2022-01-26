@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1643239550212" clover="3.2.0">
+  <project timestamp="1643239550212" name="All files">
+    <metrics statements="14" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1" elements="18" coveredelements="9" complexity="0" loc="14" ncloc="14" packages="1" files="2" classes="2"/>
+    <file name="AlbumCard.vue" path="D:\Vlad\Web\Privat\feed-engine-frontend\src\components\AlbumCard.vue">
+      <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+      <line num="52" count="1" type="stmt"/>
+      <line num="54" count="1" type="stmt"/>
+      <line num="57" count="2" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="62" count="0" type="stmt"/>
+      <line num="63" count="0" type="stmt"/>
+    </file>
+    <file name="PhotoCard.vue" path="D:\Vlad\Web\Privat\feed-engine-frontend\src\components\PhotoCard.vue">
+      <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="32" count="0" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="34" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
