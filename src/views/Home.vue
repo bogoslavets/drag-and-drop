@@ -1,13 +1,33 @@
 <template>
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3 p-4">
-    <div v-for="album in albums" :key="album.id" class="col-span-1">
-      <AlbumCard
-        :album="album"
-        :photos="getAlbumItems(album.id)"
-        @change-album="changeAlbum"
+  <div>
+    <div class="mt-20">
+      <button
+        @click="showDialog = !showDialog"
+        type="button"
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
-      </AlbumCard>
+        Add Album
+      </button>
     </div>
+    <div class="grid grid-cols-1 gap-2 p-4 mt-10 sm:grid-cols-2 xl:grid-cols-3">
+      <div v-for="album in albums" :key="album.id" class="col-span-1">
+        <AlbumCard
+          :album="album"
+          :photos="getAlbumItems(album.id)"
+          @change-album="changeAlbum"
+        >
+        </AlbumCard>
+      </div>
+    </div>
+    <Dialog
+      title="New Album"
+      v-if="showDialog"
+      @close-dialog="showDialog = !showDialog"
+    >
+      <template v-slot:content>
+        <AlbumForm></AlbumForm>
+      </template>
+    </Dialog>
   </div>
 </template>
 <script lang="ts">
@@ -17,11 +37,15 @@ import { Album, Photo } from "@/types/elements.types";
 @Component({
   components: {
     AlbumCard: async () => import("../components/AlbumCard.vue"),
+    AlbumForm: async () => import("../components/AlbumForm.vue"),
+    Dialog: async () => import("../components/Dialog.vue"),
   },
 })
 export default class Home extends Vue {
   public albums: Album[] = [];
   public photos: Photo[] = [];
+
+  public showDialog = false;
 
   mounted(): void {
     axios
@@ -53,7 +77,7 @@ export default class Home extends Vue {
       const photos = this.photos.filter((photo) => {
         albumId == photo.albumId;
       });
-      return photos;
+      return photos; //undefined | []
     } else return [];
   }*/
 
