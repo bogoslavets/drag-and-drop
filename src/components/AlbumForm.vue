@@ -102,8 +102,9 @@
       </div>
     </div>
     <button
+      id="addAlbum"
       @click="addAlbum"
-      type="button"
+      type="submit"
       class="inline-flex justify-center w-full col-span-2 p-2 mt-2 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-span-1 sm:col-start-1 sm:text-sm"
     >
       Save

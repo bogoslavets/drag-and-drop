@@ -25,7 +25,7 @@
       @close-dialog="showDialog = !showDialog"
     >
       <template v-slot:content>
-        <AlbumForm></AlbumForm>
+        <AlbumForm @save-album="saveAlbum"></AlbumForm>
       </template>
     </Dialog>
   </div>
@@ -106,6 +106,10 @@ export default class Home extends Vue {
     });
     if (target) target.albumId = albumId;
     */
+  }
+
+  async saveAlbum(newAlbum: Album, photos: Photo[]): Promise<void> {
+    this.showDialog = false;
   }
 }
 </script>
