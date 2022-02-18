@@ -1,56 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1643288742140" clover="3.2.0">
-  <project timestamp="1643288742140" name="All files">
-    <metrics statements="41" coveredstatements="18" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="3" elements="54" coveredelements="21" complexity="0" loc="41" ncloc="41" packages="1" files="3" classes="3"/>
+<coverage generated="1645183572357" clover="3.2.0">
+  <project timestamp="1645183572357" name="All files">
+    <metrics statements="9" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="1" elements="16" coveredelements="6" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1"/>
     <file name="AlbumCard.vue" path="D:\Vlad\Web\Privat\feed-engine-frontend\src\components\AlbumCard.vue">
-      <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <metrics statements="9" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="1"/>
       <line num="43" count="1" type="stmt"/>
       <line num="48" count="0" type="stmt"/>
       <line num="51" count="1" type="stmt"/>
       <line num="53" count="1" type="stmt"/>
       <line num="56" count="3" type="stmt"/>
       <line num="58" count="1" type="stmt"/>
-      <line num="61" count="0" type="stmt"/>
+      <line num="61" count="0" type="cond" truecount="0" falsecount="4"/>
       <line num="62" count="0" type="stmt"/>
-    </file>
-    <file name="AlbumForm.vue" path="D:\Vlad\Web\Privat\feed-engine-frontend\src\components\AlbumForm.vue">
-      <metrics statements="27" coveredstatements="10" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="2"/>
-      <line num="116" count="1" type="stmt"/>
-      <line num="121" count="0" type="stmt"/>
-      <line num="124" count="1" type="stmt"/>
-      <line num="125" count="2" type="stmt"/>
-      <line num="126" count="2" type="stmt"/>
-      <line num="127" count="2" type="stmt"/>
-      <line num="129" count="2" type="stmt"/>
-      <line num="130" count="2" type="stmt"/>
-      <line num="132" count="2" type="stmt"/>
-      <line num="135" count="0" type="stmt"/>
-      <line num="136" count="0" type="stmt"/>
-      <line num="137" count="0" type="stmt"/>
-      <line num="138" count="0" type="stmt"/>
-      <line num="139" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="140" count="0" type="stmt"/>
-      <line num="141" count="0" type="stmt"/>
-      <line num="142" count="0" type="stmt"/>
-      <line num="143" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="145" count="0" type="stmt"/>
-      <line num="146" count="0" type="stmt"/>
-      <line num="147" count="0" type="stmt"/>
-      <line num="150" count="0" type="stmt"/>
-      <line num="153" count="0" type="stmt"/>
-      <line num="154" count="0" type="stmt"/>
-      <line num="155" count="0" type="stmt"/>
-      <line num="161" count="1" type="stmt"/>
-      <line num="166" count="1" type="stmt"/>
-    </file>
-    <file name="PhotoCard.vue" path="D:\Vlad\Web\Privat\feed-engine-frontend\src\components\PhotoCard.vue">
-      <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <line num="22" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
-      <line num="29" count="1" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="34" count="0" type="stmt"/>
+      <line num="63" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>

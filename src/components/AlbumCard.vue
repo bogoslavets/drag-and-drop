@@ -57,9 +57,11 @@ export default class AlbumCard extends Vue {
   })
   photos: Photo[];
 
-  onDrop(event: any, album: Album): void {
-    const photoId: Photo = event.dataTransfer.getData("photoId");
-    this.$emit("change-album", photoId, album.id);
+  onDrop(event: DragEvent, album: Album): void {
+    if (event && event.dataTransfer) {
+      const photoId = event.dataTransfer.getData("photoId");
+      this.$emit("change-album", photoId, album.id);
+    }
   }
 }
 </script>
